@@ -1,0 +1,18 @@
+
+<div>
+
+  <% tweets.each do |tweet| %>
+    <% User.all.each do |user| %>
+      <% if user.id == tweet.user_id %>
+
+        <div>
+
+          <p><%= "Tweet: #{tweet.body}" %> </p>
+
+        </div>
+
+      <% end %>
+    <% end %>
+  <% end %>
+
+</div>

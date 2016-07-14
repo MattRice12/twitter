@@ -1,0 +1,13 @@
+<div>
+  <% users.each do |users| %>
+
+    <div>
+
+      <h3>
+        <%= link_to users.handle, "/users/#{users.id}" %>
+      </h3>
+
+    </div>
+
+  <% end %>
+</div>

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    render template: 'user/index.html.erb', locals: {
+    render template: 'users/index.html.erb', locals: {
       users: User.all,
       tweets: Tweet.all
     }
