@@ -20,9 +20,7 @@ user.each do |name|
                      )
 
   5.times do
-    Tweet.create!(body: "#{noun.sample}
-                         #{verb.sample}
-                         #{object.sample}",
+    Tweet.create!(body: "#{noun.sample} #{verb.sample} #{object.sample}",
                   user_id: user.id
                   )
   end
