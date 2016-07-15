@@ -22,13 +22,23 @@
  @import 'nav';
 
 
-div div {
-  .tweets-name a {
-  }
-  .tweets-handle a {
-  }
-  .tweets-time {
-  }
-  .tweets-body a {
+div {
+  overflow: hidden;
+  div {
+    padding: 0;
+    .tweet-block {
+      border: 1px solid $border-color;
+    }
+    .tweets-name a {
+    }
+    .tweets-handle a {
+    }
+    .tweets-time {
+    }
+    .tweets-body a {
+    }
+    &:hover {
+      background: $box-color;
+    }
   }
 }

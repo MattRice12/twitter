@@ -2,17 +2,16 @@
 
 div {
   h2 {
-    background-color: $banner-color;
+    background-color: white;
     height: 50px;
-    margin: 0;
+    border: 1px solid $border-color;
     padding-top: 5px;
-    border: 1px solid gray;
     .title {
       text-decoration: none;
       color: black;
       &:hover{
         text-decoration: underline;
-        color: #0084B4;
+        color: $main-color;
       }
     }
     .followers {
@@ -24,8 +23,15 @@ div {
       color: black;
       &:hover{
         text-decoration: underline;
-        color: #0084B4;
+        color: $main-color;
       }
+    }
+    .followers-num {
+      float: right;
+      height: 40px;
+      margin-right: 10px;
+      color: $main-color;
+      text-decoration: none;
     }
     .home {
       float: right;
@@ -35,7 +41,7 @@ div {
       color: black;
       &:hover{
         text-decoration: underline;
-        color: #0084B4;
+        color: $main-color;
       }
       img {
         height: 30px;

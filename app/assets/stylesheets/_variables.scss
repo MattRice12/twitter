@@ -1,8 +1,9 @@
-$banner-color: white;
-$banner-color-light: lighten($banner-color, 20%);
+$main-color: #0084B4;
+$main-color-light: lighten($main-color, 20%);
 
-$box-color: #7EA6CB;
-$box-color-dark: darken($box-color, 20%);
+$box-color: #F5F8FA;
+
+$border-color: #E1E8ED;
 
 $button-color: #7EA6CB;
 $button-color-hover: #6687A6;
