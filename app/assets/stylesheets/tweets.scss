@@ -4,25 +4,24 @@
 
 
 .main-tweet-block {
-  overflow: hidden;
-  .tweet-name-body-block {
-    border: 1px $border-color;
-    &:hover {
-    }
+  float: left;
+  border: 1px solid $border-color;
+  margin: 10px 0 0 0;
+  border-radius: 5px;
 
+  .tweet-name-body-block {
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
     .tweet-link {
       text-decoration: none;
       color: black;
+
       &:hover {
         text-decoration: none;
       }
     }
     .individual-tweet-block {
-      border: 1px $border-color;
-
       .tweet-block {
-        border: 1px $border-color;
-
       }
       .name-handle /* big block */{
         color: black;
@@ -44,14 +43,16 @@
         }
         .tweets-time {
           color: $secondary-text;
+          text-decoration: none;
           &:hover {
-            color: $main-color;
+            text-decoration: none;
             text-decoration: underline;
           }
         }
       }
       .tweets-body  {
         color: black;
+        text-align: left;
         &:hover {
           color: $main-color;
           text-decoration: underline;

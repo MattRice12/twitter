@@ -1,43 +1,51 @@
 
+<div class="profile">
+  <h3><%= "This is the profile area" %></h3>
+
+</div>
+
 <div class="main-tweet-block">
 
-  <% tweets.shuffle.each do |tweet| ###REMOVE SHUFFLE LATER!!!%>
-    <% User.all.each do |user| %>
-      <% if user.id == tweet.user_id %>
+    <h3><%= "Tweets" %></h3>
 
-      <div class="tweet-name-body-block">
-        <div class="individual-tweet-block">
-          <div class="tweet-block" >
-            <span class="name-handle">
+    <% tweets.shuffle.each do |tweet| ###REMOVE SHUFFLE LATER!!!%>
+      <% User.all.each do |user| %>
+        <% if user.id == tweet.user_id %>
+
+          <div class="tweet-name-body-block">
+            <div class="individual-tweet-block">
+                <span class="name-handle">
 
 
-              <span class="tweets-name"><%= user.name %>
-                <%= link_to "users/#{tweet.user_id}", class: 'tweet-link' do %>
-              </span>
+                  <span class="tweets-name"><%= user.name %>
+                    <%= link_to "users/#{tweet.user_id}", class: 'tweet-link' do %>
+                  </span>
 
-              <span class="tweets-handle"><%= "@#{user.name}" %></span>
+                  <span class="tweets-handle"><%= "@#{user.name}" %></span>
 
-            </span>
+                  <span class="tweets-time"> <%= "#{distance_of_time_in_words(Time.now, tweet.created_at)}" %></span>
+
+                </span>
+            </div>
+
+            <div class="individual-tweet-block">
+
+                <%= link_to "tweets/#{tweet.id}", class: 'tweet-link' do %>
+
+
+                <h5 class="tweets-body"><%= tweet.body %></h5>
+            </div>
+
           </div>
-        </div>
+        <% end %>
 
-        <div class="individual-tweet-block">
+        <% end %>
 
-          <div class="tweet-block" >
-            <%= link_to "tweets/#{tweet.id}", class: 'tweet-link' do %>
-
-            <h6 class="tweets-time"> <%= "#{distance_of_time_in_words(Time.now, tweet.created_at)}" %></h6>
-
-            <h5 class="tweets-body"><%= tweet.body %></h5>
-          </div>
-        </div>
-    </div>
-      <% end %>
-
-      <% end %>
-
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
+</div>
 
+<div class="other-users">
+  <h3><%= "This area displays other users" %></h3>
 </div>
