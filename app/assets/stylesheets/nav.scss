@@ -1,0 +1,47 @@
+@import 'variables';
+
+div {
+  h2 {
+    background-color: $banner-color;
+    height: 50px;
+    margin: 0;
+    padding-top: 5px;
+    border: 1px solid gray;
+    .title {
+      text-decoration: none;
+      color: black;
+      &:hover{
+        text-decoration: underline;
+        color: #0084B4;
+      }
+    }
+    .followers {
+      float: right;
+      height: 40px;
+      margin-right: 10px;
+      color: black;
+      text-decoration: none;
+      color: black;
+      &:hover{
+        text-decoration: underline;
+        color: #0084B4;
+      }
+    }
+    .home {
+      float: right;
+      height: 40px;
+      color: black;
+      text-decoration: none;
+      color: black;
+      &:hover{
+        text-decoration: underline;
+        color: #0084B4;
+      }
+      img {
+        height: 30px;
+        padding-right: 0px;
+        width: auto;
+      }
+    }
+  }
+}

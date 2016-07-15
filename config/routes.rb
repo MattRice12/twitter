@@ -9,8 +9,6 @@ Rails.application.routes.draw do
   get 'users', to: 'users#index'
   get 'tweets', to: 'tweets#index'
 
-
-
-  root 'dashboard#index'
+  root 'tweets#index'
 
 end

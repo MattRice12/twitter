@@ -1,0 +1,19 @@
+<div>
+  <h2>
+    <%= link_to("twitter", root_path, class: "title") %>
+
+    <%= link_to(root_path, class: "home") do %>
+      <%= image_tag("https://cdn4.iconfinder.com/data/icons/roundies-2/32/birdhouse-512.png") %>
+      <%= "Home" %>
+    <% end %>
+
+    <%= link_to("followers", users_path, class: "followers") %>
+    <%= link_to(User.all.count, users_path, class: "followers") %>
+
+
+
+  </h2>
+
+
+<!-- http://www.bestpeer.com/img/home.png -->
+<!-- https://lh4.googleusercontent.com/-Xa3l7VsfilI/VDz0yiG5SdI/AAAAAAAABQY/RITzfsvFqYQ/w800-h800/add-list-256.png -->

@@ -1,17 +1,17 @@
 
 <div>
 
-  <% tweets.each do |tweet| %>
+  <% tweets.shuffle.each do |tweet| ###REMOVE SHUFFLE LATER!!!%>
     <% User.all.each do |user| %>
       <% if user.id == tweet.user_id %>
 
         <div>
 
           <p>
-            <h5><%=link_to("#{user.name}", "/users/#{user.id}") %></h5>
-            <h5><%=link_to("@#{user.name}", "/users/#{user.id}") %></h5>
-            <h6> <%= "#{distance_of_time_in_words(Time.now, tweet.created_at)}" %></h6>
-            <h5><%=link_to("#{tweet.body}", "/tweets/#{tweet.id}") %></h5>
+            <h5 class ="tweets-name"><%=link_to("#{user.name}", "/users/#{user.id}") %></h5>
+            <h5 class ="tweets-handle"><%=link_to("@#{user.name}", "/users/#{user.id}") %></h5>
+            <h6 class="tweets-time"> <%= "#{distance_of_time_in_words(Time.now, tweet.created_at)}" %></h6>
+            <h5 class ="tweets-body"><%=link_to("#{tweet.body}", "/tweets/#{tweet.id}") %></h5>
 
           </p>
 
