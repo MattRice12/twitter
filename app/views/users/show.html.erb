@@ -1,0 +1,22 @@
+<div>
+  <h6><%="TWEETS"%></h6>
+  <h4><%=user.tweets.count%></h4>
+
+  <% user.tweets.each do |tweet| %>
+
+  <div>
+
+    <p>
+      <h5><%=link_to("#{user.name}", "/users/#{user.id}") %></h5>
+      <h5><%=link_to("@#{user.name}", "/users/#{user.id}") %></h5>
+      <h6> <%= "#{distance_of_time_in_words(Time.now, tweet.created_at)}" %></h6>
+      <h5><%=link_to("#{tweet.body}", "/tweets/#{tweet.id}") %></h5>
+
+    </p>
+
+  </div>
+
+
+  <% end %>
+
+</div>

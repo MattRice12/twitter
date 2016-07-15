@@ -7,6 +7,12 @@ class TweetsController < ApplicationController
   end
 
   def show
-    
+    if Tweet.exists?(params[:id])
+      render template: 'tweets/show.html.erb', locals: {
+        tweet: Tweet.find(params[:id])
+      }
+    else
+      render html: "Not Found", status: 404
+    end
   end
 end

@@ -7,11 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-noun = ["Matt", "Rob", "Kate", "Ahkeem", "Justin", "Dane"]
-verb = ["sees", "hears", "thinks about", "hates", "loves", "can't stop thinking about", "secretly dispises"]
-object = ["eggs", "giraffes", "elephants", "kittens", "dogs", "people", "cartoons", "the show Lost", "coffee"]
+noun = ["Matt", "Rob", "Kate", "Ahkeem", "Justin", "Dane", "Everyone", "Someone" "Anyone", "Obama", "Trump", "Ghandi", "Pikachu", "Garfield", "Einstein", "Socrates", "Roland"]
+verb = ["thinks about", "hates", "votes for", "loves", "can't stop thinking about", "secretly loves", "secretly despises", "argued about", "supports", "defends"]
+object = ["opening cans", "running into walls", "going on field trips", "playing with the neighbor's dog", "sorting rice", "kittens being presidents", "people that do people things", "cartoons", "the show Lost", "coffee too", "Pokemon", "Digimon too much", "Sailor Moon", "food", "music", "pokeballs", "lasagna", "philosophy", "White Walkers",]
+punctuation = ["", ".", ".", ".",  "!", "?", "!?", "!!!", "??!", "!!!11!1!!11one", ' ¯\_(ツ)_/¯', ' (╯°□°）╯︵ ┻━┻', ' .·´¯`(>▂<)´¯`·.', ' ヽ(´▽｀)ノ']
 
-user = ["Matt", "Rob", "Kate", "Ahkeem", "Justin", "Dane"]
+user = %w(Matt Rob Kate Ahkeem Justin Dane)
 
 user.each do |name|
   user = User.create!(name: "#{name}",
@@ -20,8 +21,9 @@ user.each do |name|
                      )
 
   5.times do
-    Tweet.create!(body: "#{noun.sample} #{verb.sample} #{object.sample}",
-                  user_id: user.id
+    Tweet.create!(body: "#{noun.sample} #{verb.sample} #{object.sample}#{punctuation.sample}",
+                  user_id: user.id,
+
                   )
   end
 end
