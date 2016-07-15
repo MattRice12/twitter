@@ -9,10 +9,9 @@
   </head>
 
   <body>
-    <nav>
-      <h1 class="twitter-head">
+    <nav class="twitter-head">
         <%= render "shared/nav" unless @disable_nav %>
-      </h1>
-    </nav>    <%= yield %>
+    </nav>
+     <%= yield %>
   </body>
 </html>

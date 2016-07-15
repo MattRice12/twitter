@@ -1,25 +1,40 @@
 
-<div>
+<div class="main-tweet-block">
 
   <% tweets.shuffle.each do |tweet| ###REMOVE SHUFFLE LATER!!!%>
     <% User.all.each do |user| %>
       <% if user.id == tweet.user_id %>
 
-        <div>
-      
-          <p class="tweet-block" >
+      <div class="tweet-name-body-block">
+        <div class="individual-tweet-block">
+          <div class="tweet-block" >
+            <span class="name-handle">
 
-            <h5 class="tweets-name"><%=link_to("#{user.name}", "/users/#{user.id}") %></h5>
 
-            <h5 class="tweets-handle"><%=link_to("@#{user.name}", "/users/#{user.id}") %></h5>
+              <span class="tweets-name"><%= user.name %>
+                <%= link_to "users/#{tweet.user_id}", class: 'tweet-link' do %>
+              </span>
+
+              <span class="tweets-handle"><%= "@#{user.name}" %></span>
+
+            </span>
+          </div>
+        </div>
+
+        <div class="individual-tweet-block">
+
+          <div class="tweet-block" >
+            <%= link_to "tweets/#{tweet.id}", class: 'tweet-link' do %>
 
             <h6 class="tweets-time"> <%= "#{distance_of_time_in_words(Time.now, tweet.created_at)}" %></h6>
 
-            <h5 class="tweets-body"><%=link_to("#{tweet.body}", "/tweets/#{tweet.id}") %></h5>
-
-          </p>
-
+            <h5 class="tweets-body"><%= tweet.body %></h5>
+          </div>
         </div>
+    </div>
+      <% end %>
+
+      <% end %>
 
       <% end %>
     <% end %>

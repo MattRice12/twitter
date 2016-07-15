@@ -1,23 +1,66 @@
 @import 'variables';
 
 
-div {
- overflow: hidden;
- div {
-   padding: 0;
-   .tweet-block {
-     border: 1px solid $border-color;
-   }
-   .tweets-name a {
-   }
-   .tweets-handle a {
-   }
-   .tweets-time {
-   }
-   .tweets-body a {
-   }
-   &:hover {
-     background: $box-color;
-   }
- }
+
+
+.main-tweet-block {
+  overflow: hidden;
+  .tweet-name-body-block {
+    border: 1px $border-color;
+    &:hover {
+    }
+
+    .tweet-link {
+      text-decoration: none;
+      color: black;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    .individual-tweet-block {
+      border: 1px $border-color;
+
+      .tweet-block {
+        border: 1px $border-color;
+
+      }
+      .name-handle /* big block */{
+        color: black;
+        &:hover {
+          color: $main-color;
+          text-decoration: underline;
+        }
+        .tweets-name /* name block */{
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        .tweets-handle /* handle block */{
+          color: $secondary-text;
+          text-decoration: none;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+        .tweets-time {
+          color: $secondary-text;
+          &:hover {
+            color: $main-color;
+            text-decoration: underline;
+          }
+        }
+      }
+      .tweets-body  {
+        color: black;
+        &:hover {
+          color: $main-color;
+          text-decoration: underline;
+
+        }
+      }
+      &:hover {
+        background: $box-color;
+      }
+    }
+  }
 }

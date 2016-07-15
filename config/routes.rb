@@ -3,11 +3,8 @@ Rails.application.routes.draw do
 
 
 
-  get 'users/:id', to: 'users#show'
-  get 'tweets/:id', to: 'tweets#show'
-
-  get 'users', to: 'users#index'
-  get 'tweets', to: 'tweets#index'
+  resources :users
+  resources :tweets
 
   root 'tweets#index'
 
