@@ -8,46 +8,56 @@
   border: 1px solid $border-color;
   margin: 10px 0 0 0;
   border-radius: 5px;
-
   .tweet-name-body-block {
     border-top: 1px solid $border-color;
     border-bottom: 1px solid $border-color;
-    .tweet-link {
-      text-decoration: none;
-      color: black;
-
-      &:hover {
-        text-decoration: none;
-      }
-    }
     .individual-tweet-block {
-      .tweet-block {
+      &:hover {
+        color: $main-color;
       }
       .name-handle /* big block */{
-        color: black;
         &:hover {
           color: $main-color;
           text-decoration: underline;
         }
-        .tweets-name /* name block */{
+        .name-link {
+          text-decoration: none;
           &:hover {
+            color: $main-color;
+            text-decoration: none;
+          }
+        }
+        .tweets-name /* name block */{
+          color: black;
+          &:hover {
+            color: $main-color;
             text-decoration: underline;
           }
         }
         .tweets-handle /* handle block */{
           color: $secondary-text;
-          text-decoration: none;
           &:hover {
             text-decoration: none;
           }
+
         }
         .tweets-time {
           color: $secondary-text;
           text-decoration: none;
           &:hover {
             text-decoration: none;
-            text-decoration: underline;
           }
+          .link {
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+
+      .tweet-link {
+        &:hover {
+          text-decoration: none;
         }
       }
       .tweets-body  {
@@ -55,12 +65,11 @@
         text-align: left;
         &:hover {
           color: $main-color;
-          text-decoration: underline;
-
         }
       }
       &:hover {
         background: $box-color;
+
       }
     }
   }

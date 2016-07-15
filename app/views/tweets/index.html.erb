@@ -17,8 +17,13 @@
                 <span class="name-handle">
 
 
-                  <span class="tweets-name"><%= user.name %>
-                    <%= link_to "users/#{tweet.user_id}", class: 'tweet-link' do %>
+                  <span>
+                    <%= link_to "users/#{tweet.user_id}", class: "name-link" do %>
+
+                    <span class="tweets-name">
+                      <%= user.name %>
+                    </span>
+
                   </span>
 
                   <span class="tweets-handle"><%= "@#{user.name}" %></span>
@@ -26,6 +31,8 @@
                   <span class="tweets-time"> <%= "#{distance_of_time_in_words(Time.now, tweet.created_at)}" %></span>
 
                 </span>
+
+
             </div>
 
             <div class="individual-tweet-block">
