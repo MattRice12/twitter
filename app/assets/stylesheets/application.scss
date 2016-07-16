@@ -21,6 +21,20 @@
  @import 'variables';
  @import 'nav';
 
+
+.row {
+  // border: 1px solid black;
+}
+
+.col-md-offset-5 {
+  // border: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.col-md-offset-3 {
+  // border: 1px solid black;
+}
+
 body {
   background: $box-color;
 }

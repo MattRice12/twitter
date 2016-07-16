@@ -19,4 +19,25 @@ class UsersController < ApplicationController
       render html: "Not Found", status: 404
     end
   end
+
+  def new
+    render locals: {
+      user: User.new
+    }
+  end
+
+  def create
+    user = User.new
+    user.name = params[:user][:name]
+    user.email = [:user][:email]
+    user.handle = [:user][:handle]
+    if user.save
+      redirect_to "/"
+    else
+      flash[:alert] = "Could not be saved due to errors."
+      render template: 'users/new.html.erb', locals: {
+        user: user
+      }
+    end
+  end
 end

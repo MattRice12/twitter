@@ -8,34 +8,33 @@
   <div class="col-md-12">
     <% if tweet.errors.any? %>
       <% tweet.errors.full_messages.each do |msg| %>
-        <p> <%= msg %> </p>
-        <% end %>
+      <p> <%= msg %> </p>
       <% end %>
-    </div>
+    <% end %>
   </div>
+</div>
 
   <%= form_for(tweet) do |f| %>
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
+      <div class="col-md-6 col-md-offset-5">
         <div class="input-group">
-          <label for="body">Tweeter</label>
-            <%= f.select :user_id, options_from_collection_for_select(User.all, :id, :handle) %>
-          </div>
-        </div>
-        <div class="col-md-6 col-md-offset-3">
-          <div class="input-group">
-            <label for="body">Body</label>
-            <%= f.text_area :body, placeholder: "What's on your mind?"%>
-          </div>
+          <div><label for="body">Tweeter: </label></div>
+          <div><%= f.select :user_id, options_from_collection_for_select(User.all, :id, :handle) %></div>
         </div>
       </div>
+      <div class="col-md-6 col-md-offset-5">
+        <div class="input-group">
+          <div><label for="body">Body: </label></div>
+          <div><%= f.text_area :body, placeholder: "What's on your mind?"%></div>
+        </div>
+      </div>
+    </div>
       <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-md-6 col-md-offset-5">
           <div class="actions">
             <%= f.submit %>
           </div>
         </div>
       </div>
-    <% end %>
-  </div>
+  <% end %>
 </div>

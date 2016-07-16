@@ -15,7 +15,6 @@
   </div>
 
   <div class="prof-info-block">
-
     <div class="prof-tweets-block">
       <span class="prof-tweets-link">
         <%= link_to("TWEETS", users_path, class: "prof-user-tweets") %>
@@ -64,7 +63,7 @@
           </div>
 
           <div class="individual-tweet-block">
-              <%= link_to "tweets/#{id}", class: 'tweet-link' do %>
+              <%= link_to "tweets/#{tweet.id}", class: 'tweet-link' do %>
                 <h5 class="tweets-body"><%= tweet.body %></h5>
               <% end %>
           </div>
