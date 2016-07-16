@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-md-12">
+    <h4><%= form_title %></h4>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <% if tweet.errors.any? %>
+      <% tweet.errors.full_messages.each do |msg| %>
+        <p> <%= msg %> </p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <%= form_for(tweet) do |f| %>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="input-group">
+          <label for="body">Tweeter</label>
+            <%= f.select :user_id, options_from_collection_for_select(User.all, :id, :handle) %>
+          </div>
+        </div>
+        <div class="col-md-6 col-md-offset-3">
+          <div class="input-group">
+            <label for="body">Body</label>
+            <%= f.text_area :body, placeholder: "What's on your mind?"%>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="actions">
+            <%= f.submit %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

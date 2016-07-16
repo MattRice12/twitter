@@ -21,9 +21,30 @@
  @import 'variables';
  @import 'nav';
 
- body {
-   background: $box-color;
- }
+body {
+  background: $box-color;
+}
+
+h1 {
+  color: blue;
+}
+
+a {
+  color: $main-text;
+  &:hover {
+    color: $secondary-text;
+  }
+}
+
+footer small {
+  display: block;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.center-align {
+  text-align: center;
+}
 
 div {
   overflow: hidden;
@@ -31,14 +52,6 @@ div {
     padding: 0;
     .tweet-block {
       border: 1px solid $border-color;
-    }
-    .tweets-name a {
-    }
-    .tweets-handle a {
-    }
-    .tweets-time {
-    }
-    .tweets-body a {
     }
     &:hover {
       background: $box-color;

@@ -9,9 +9,22 @@
   </head>
 
   <body>
-    <nav class="twitter-head">
-      <%= render "shared/nav" unless @disable_nav %>
-    </nav>
-     <%= yield %>
+    <header class="twitter-head">
+      <div class="container-fluid">
+        <div class="row">
+          <div clas="col-md-5".col-md-offset-3>
+            <%= render "shared/nav" unless @disable_nav %>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class='content'>
+      <div class="container-fluid">
+        <%= yield %>
+      </div>
+    </section>
+    <footer>
+      <small>(c) Matt Rice 2016</small>
+    </footer>
   </body>
 </html>

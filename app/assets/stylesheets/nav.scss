@@ -1,12 +1,16 @@
 @import 'variables';
 
 div {
-  h2 {
+  h6 {
     background-color: white;
     height: 50px;
     border: 1px solid $border-color;
     padding-top: 5px;
     .title {
+      text-align: center;
+      position: relative;
+      left: 40%;
+      top: 10px;
       text-decoration: none;
       color: black;
       &:hover{
@@ -15,9 +19,12 @@ div {
       }
     }
     .home {
-      float: right;
+      float: left;
       height: 40px;
       color: black;
+      position: relative;
+      top: 5px;
+      left: 5%;
       text-decoration: none;
       color: black;
       &:hover{
@@ -25,10 +32,20 @@ div {
         color: $main-color;
       }
       img {
-        height: 30px;
-        padding-right: 0px;
+        height: 25px;
+        position: relative;
+        bottom: 2px;
+        padding-left: 10px;
         width: auto;
       }
+    }
+    .new-tweet {
+      float: right;
+      position: relative;
+      top: 10px;
+      right: 5%;
+      padding-right: 10px;
+
     }
   }
 }

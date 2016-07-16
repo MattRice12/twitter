@@ -8,8 +8,11 @@
 
 
 noun = ["Matt", "Rob", "Kate", "Ahkeem", "Justin", "Dane", "Everyone", "Someone", "Anyone", "Obama", "Trump", "Ghandi", "Pikachu", "Garfield", "Einstein", "Socrates", "Roland"]
+
 verb = ["thinks about", "hates", "votes for", "loves", "can't stop thinking about", "secretly loves", "secretly despises", "argued about", "supports", "defends"]
+
 object = ["opening cans", "running into walls", "going on field trips", "playing with the neighbor's dog", "sorting rice", "kittens being presidents", "people that do people things", "cartoons", "the show Lost", "coffee too", "Pokemon", "Digimon too much", "Sailor Moon", "food", "music", "pokeballs", "lasagna", "philosophy", "White Walkers",]
+
 punctuation = ["", ".", ".", ".",  "!", "?", "!?", "!!!", "??!", "!!!11!1!!11one", ' ¯\_(ツ)_/¯', ' (╯°□°）╯︵ ┻━┻', ' .·´¯`(>▂<)´¯`·.', ' ヽ(´▽｀)ノ']
 
 user = %w(Matt Rob Kate Ahkeem Justin Dane)

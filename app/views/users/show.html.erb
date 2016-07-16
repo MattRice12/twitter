@@ -1,16 +1,52 @@
 
 <div class="profile">
-  <h3><%= "This is the profile area" %></h3>
 
-  <%= link_to("followers", users_path, class: "followers") %>
-  <%= link_to(User.all.count, users_path, class: "num") %>
+  <div class="colored-block">
+  </div>
+
+  <div class="prof-name-handle-block">
+    <div class="prof-pic">
+      <%= image_tag("http://i.imgur.com/gFMomQx.jpg") %>
+    </div>
+
+    <div class="prof-name-block">
+      <%= link_to "Matt", "users/1", class: "prof-name-name"%>
+      <%= link_to "@Matt", "users/1", class: "prof-name-handle"%>
+    </div>
+  </div>
+
+  <div class="prof-info-block">
+
+    <div class="prof-tweets-block">
+      <span class="prof-tweets-link">
+        <%= link_to("TWEETS", users_path, class: "prof-user-tweets") %>
+        <%= link_to(user.tweets.count, users_path, class: "prof-tweets-num") %>
+      </span>
+    </div>
+
+    <div class="prof-following-block">
+      <span class="prof-following-link">
+        <%= link_to("FOLLOWING", users_path, class: "prof-user-following") %>
+        <%= link_to(User.all.count, users_path, class: "prof-following-num") %>
+      </span>
+    </div>
+
+    <div class="prof-followers-block">
+      <span class="prof-followers-link">
+        <%= link_to("FOLLOWERS", users_path, class: "prof-user-followers") %>
+        <%= link_to(User.all.count, users_path, class: "prof-followers-num") %>
+      </span>
+    </div>
+  </div>
 
 </div>
 
 <div class="main-tweet-block">
 
-  <h6><%="TWEETS"%></h6>
-  <h4><%=user.tweets.count%></h4>
+  <div class="tweet-count">
+    <h5><%="TWEETS"%></h5>
+    <h4><%= user.tweets.count %></h4>
+  </div>
 
   <% user.tweets.each do |tweet| %>
 
@@ -30,7 +66,6 @@
 
         </span>
 
-
     </div>
 
     <div class="individual-tweet-block">
@@ -44,7 +79,6 @@
 
     </div>
 
-
   </div>
 
   <% end %>
@@ -52,5 +86,9 @@
 </div>
 
 <div class="other-users">
-  <h3><%= "This area displays other users" %></h3>
+  <h3>
+    <% User.all.each do |user| %>
+      <h5><%= link_to user.handle, "/users/#{user.id}" %></h5>
+    <% end %>
+  </h3>
 </div>

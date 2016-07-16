@@ -13,9 +13,15 @@
   &:hover {
     background: white;
   }
+  .tweet-count h6 {
+    border: none;
+
+  }
   .tweet-name-body-block {
     border-top: 1px solid $border-color;
     border-bottom: 1px solid $border-color;
+    padding: 0 10px 0 10px;
+
     .individual-tweet-block {
       &:hover {
         color: $main-color;
