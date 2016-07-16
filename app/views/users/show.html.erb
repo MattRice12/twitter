@@ -1,22 +1,56 @@
-<div>
+
+<div class="profile">
+  <h3><%= "This is the profile area" %></h3>
+
+  <%= link_to("followers", users_path, class: "followers") %>
+  <%= link_to(User.all.count, users_path, class: "num") %>
+
+</div>
+
+<div class="main-tweet-block">
+
   <h6><%="TWEETS"%></h6>
   <h4><%=user.tweets.count%></h4>
 
   <% user.tweets.each do |tweet| %>
 
-  <div>
+  <div class="tweet-name-body-block">
+    <div class="individual-tweet-block">
+        <span class="name-handle">
 
-    <p>
-      <h5><%=link_to("#{user.name}", "/users/#{user.id}") %></h5>
-      <h5><%=link_to("@#{user.name}", "/users/#{user.id}") %></h5>
-      <h6> <%= "#{distance_of_time_in_words(Time.now, tweet.created_at)}" %></h6>
-      <h5><%=link_to("#{tweet.body}", "/tweets/#{tweet.id}") %></h5>
+          <%= link_to "users/#{tweet.user_id}", class: "name-link" do %>
 
-    </p>
+          <span class="tweets-name"><%= user.name %></span>
+
+          <span class="tweets-handle"><%= "@#{user.name}" %></span>
+
+          <span class="tweets-time"> <%= "#{distance_of_time_in_words(Time.now, tweet.created_at)}" %></span>
+
+          <% end %>
+
+        </span>
+
+
+    </div>
+
+    <div class="individual-tweet-block">
+
+        <%= link_to "tweets/#{tweet.id}", class: 'tweet-link' do %>
+
+
+        <h5 class="tweets-body"><%= tweet.body %></h5>
+
+        <% end %>
+
+    </div>
+
 
   </div>
 
-
   <% end %>
 
+</div>
+
+<div class="other-users">
+  <h3><%= "This area displays other users" %></h3>
 </div>

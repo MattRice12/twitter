@@ -21,6 +21,9 @@
  @import 'variables';
  @import 'nav';
 
+ body {
+   background: $box-color;
+ }
 
 div {
   overflow: hidden;

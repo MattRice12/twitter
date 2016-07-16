@@ -9,7 +9,8 @@ class TweetsController < ApplicationController
   def show
     if Tweet.exists?(params[:id])
       render template: 'tweets/show.html.erb', locals: {
-        tweet: Tweet.find(params[:id])
+        tweet: Tweet.find(params[:id]),
+        user: User.find(params[:id])
       }
     else
       render html: "Not Found", status: 404

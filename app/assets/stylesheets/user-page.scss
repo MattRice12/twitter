@@ -1,10 +1,18 @@
 @import 'variables';
 
+.background {
+  background: $box-color;
+}
+
 .main-tweet-block {
   float: left;
   border: 1px solid $border-color;
   margin: 10px 10px 0 0;
   border-radius: 5px;
+  background: white;
+  &:hover {
+    background: white;
+  }
   .tweet-name-body-block {
     border-top: 1px solid $border-color;
     border-bottom: 1px solid $border-color;
@@ -65,7 +73,7 @@
         }
       }
       &:hover {
-        background: $box-color;
+
 
       }
     }

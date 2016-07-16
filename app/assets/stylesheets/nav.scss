@@ -14,25 +14,6 @@ div {
         color: $main-color;
       }
     }
-    .followers {
-      float: right;
-      height: 40px;
-      margin-right: 10px;
-      color: black;
-      text-decoration: none;
-      color: black;
-      &:hover{
-        text-decoration: underline;
-        color: $main-color;
-      }
-    }
-    .followers-num {
-      float: right;
-      height: 40px;
-      margin-right: 10px;
-      color: $main-color;
-      text-decoration: none;
-    }
     .home {
       float: right;
       height: 40px;
