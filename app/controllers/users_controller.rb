@@ -11,6 +11,7 @@ class UsersController < ApplicationController
       user = User.find(params[:id])
       render template: 'users/show.html.erb', locals: {
         user: user,
+        users: User.all,
         handle: user.handle,
         tweets: Tweet.all.order(created_at: :desc),
         tweet: Tweet.new
@@ -29,14 +30,16 @@ class UsersController < ApplicationController
   def create
     user = User.new
     user.name = params[:user][:name]
-    user.email = [:user][:email]
-    user.handle = [:user][:handle]
+    user.email = params[:user][:email]
+    user.handle = params[:user][:handle]
     if user.save
       redirect_to "/"
     else
       flash[:alert] = "Could not be saved due to errors."
       render template: 'users/new.html.erb', locals: {
-        user: user
+        user: user,
+        tweets: Tweet.all.order(created_at: :desc)
+
       }
     end
   end

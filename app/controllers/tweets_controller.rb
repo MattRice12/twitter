@@ -2,7 +2,8 @@ class TweetsController < ApplicationController
   def index
     render template: 'tweets/index.html.erb', locals: {
       users: User.all,
-      tweets: Tweet.all.order(created_at: :desc).limit(20)
+      tweets: Tweet.all.order(created_at: :desc).limit(30),
+      tweet: Tweet.new
     }
   end
 
@@ -10,7 +11,8 @@ class TweetsController < ApplicationController
     if Tweet.exists?(params[:id])
       tweet = Tweet.find(params[:id])
       render template: 'tweets/show.html.erb', locals: {
-        tweet: tweet,
+        tweets: Tweet.all,
+        tweet: tweet
       }
     else
       render html: "Not Found", status: 404

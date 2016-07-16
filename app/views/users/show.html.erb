@@ -27,14 +27,14 @@
     <div class="prof-following-block">
       <span class="prof-following-link">
         <%= link_to("FOLLOWING", users_path, class: "prof-user-following") %>
-        <%= link_to(User.all.count, users_path, class: "prof-following-num") %>
+        <%= link_to(users.count, users_path, class: "prof-following-num") %>
       </span>
     </div>
 
     <div class="prof-followers-block">
       <span class="prof-followers-link">
         <%= link_to("FOLLOWERS", users_path, class: "prof-user-followers") %>
-        <%= link_to(User.all.count, users_path, class: "prof-followers-num") %>
+        <%= link_to(users.count, users_path, class: "prof-followers-num") %>
       </span>
     </div>
   </div>
@@ -43,18 +43,22 @@
 
 <div class="main-tweet-block">
 
-  <div class="tweet-count">
-    <h5><%="TWEETS"%></h5>
-    <h4><%= user.tweets.count %></h4>
+  <div><%= form_for(tweet) do |f| %>
+    <div class="container">
+      <div class="user-tweet"><%= f.select :user_id, options_from_collection_for_select(User.all, :id, :handle) %></div>
+      <p class="new-tweet-body"><%= f.text_area :body, placeholder: "What's on your mind?"%></p>
+      <div class="submit-tweet"><%= f.submit %></div>
+    </div>
+    <% end %>
   </div>
 
-  <% user.tweets.each do |tweet| %>
+  <% user.tweets.order(created_at: :desc).limit(30).each do |tweet| %>
 
   <div class="tweet-name-body-block">
     <div class="individual-tweet-block">
         <span class="name-handle">
 
-          <%= link_to "users/#{tweet.user_id}", class: "name-link" do %>
+          <%= link_to user_path(user), class: "name-link" do %>
 
           <span class="tweets-name"><%= user.name %></span>
 
@@ -70,7 +74,7 @@
 
     <div class="individual-tweet-block">
 
-        <%= link_to "tweets/#{tweet.id}", class: 'tweet-link' do %>
+        <%= link_to tweet_path(tweet), class: 'tweet-link' do %>
 
 
         <h5 class="tweets-body"><%= tweet.body %></h5>

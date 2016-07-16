@@ -1,10 +1,22 @@
 @import 'variables';
 
+
+
+
 .main-tweet-block {
   float: left;
+  width: 40%;
   border: 1px solid $border-color;
-  margin: 10px 10px 0 0;
+  margin: 0;
   border-radius: 5px;
+  overflow: hidden;
+  .user-tweet {
+    float: left;
+  }
+  .new-tweet-body {
+    width: 100%;
+  }
+
   .tweet-name-body-block {
     border-top: 1px solid $border-color;
     border-bottom: 1px solid $border-color;
