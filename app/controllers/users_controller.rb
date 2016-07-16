@@ -43,4 +43,12 @@ class UsersController < ApplicationController
       }
     end
   end
+
+  def destroy
+    if User.exists?(params[:id])
+      User.destroy(params[:id])
+      user.save
+      redirect_to user_path
+    end
+  end
 end

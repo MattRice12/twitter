@@ -38,4 +38,10 @@ class TweetsController < ApplicationController
       }
     end
   end
+
+  def destroy
+    Tweet.destroy(params[:id])
+    user.save
+    redirect_to user_path
+  end
 end
