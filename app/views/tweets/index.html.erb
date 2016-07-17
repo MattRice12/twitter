@@ -87,19 +87,26 @@
     </div>
 
     <div class="individual-tweet-block">
-        <%= link_to "tweets/#{tweet.id}", class: 'tweet-link' do %>
-        <h5 class="tweets-body"><%= tweet.body %></h5>
-        <% end %>
-        <button type="submit" class="tweet-edit-button"><%= link_to "Edit", edit_tweet_path(tweet) %></button>
-        <button type="delete" class="tweet-delete-button"><%= link_to "Delete", tweet_path(tweet), method: :delete, data: {confirm: "Are you sure?"} %>        </button>
+      <div>
+        <row>
 
-
+          <div class="tweets-body">
+            <%= link_to "tweets/#{tweet.id}", class: 'tweet-link' do %>
+            <%= tweet.body %>
+            <% end %>
+          </div>
+        </row>
+        <row>
+          <div class="edit-delete-block">
+            <button type="submit" class="tweet-edit-button"><%= link_to "Edit", edit_tweet_path(tweet) %></button>
+            <button type="delete" class="tweet-delete-button"><%= link_to "Delete", tweet_path(tweet), method: :delete, data: {confirm: "Are you sure?"} %>        </button>
+          </div>
+        </row>
+      </div>
     </div>
 
 
-
   </div>
-
   <% end %>
 </div>
 

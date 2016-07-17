@@ -17,11 +17,41 @@
     margin: 0;
     &:hover {
       background: box-color;
-
     }
     a:hover {
       color: $main-color;
       text-decoration: none;
+    }
+    .index-user-handle {
+      display: inline-block;
+      float: left;
+      font-size: 150%;
+      font-weight: bold;
+      margin-left: 39%;
+    }
+    .user-delete-button {
+      vertical-align: top;
+      float: right;
+      margin-right: 15%;
+      border: 1px solid $border-color;
+      border-radius: 5px;
+      background: $main-color;
+      font-size: 70%;
+      width: 75px;
+      height: 30px;
+      text-align: center;
+      font-weight: bold;
+      &:hover {
+        background: $main-color-dark;
+        text-decoration: none;
+      }
+      a {
+        color: white;
+        &:hover {
+          color: #93A3AE;
+          text-decoration: none;
+        }
+      }
     }
   }
 }
