@@ -55,3 +55,26 @@ div {
     }
   }
 }
+
+@media (max-width: 991px) {
+  .home {
+    visibility: hidden;
+    img {
+      visibility: visible;
+      left: -40%;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .title {
+    visibility: hidden;
+  }
+  .home {
+    visibility: hidden;
+    img {
+      visibility: visible;
+    }
+  }
+
+}

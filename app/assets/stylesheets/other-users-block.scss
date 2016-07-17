@@ -4,7 +4,7 @@
   text-align: left;
   border: 1px solid $border-color;
   border-radius: 10px;
-  margin-right: 8%;
+  width: 300px;
   padding-left: 10px;
   padding-right: 10px;
   background: white;
@@ -42,5 +42,31 @@
         text-decoration: none;
       }
     }
+  }
+}
+
+@media (max-width: 1300px) {
+  .user-edit-button {
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 1185px) {
+  .other-users {
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 991px) {
+  .other-users {
+    visibility: visible;
+    min-width: 30%;
+    margin-right: 0;
+
+  }
+}
+@media (max-width: 890px) {
+  .other-users {
+    visibility: hidden;
   }
 }

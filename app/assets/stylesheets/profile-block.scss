@@ -8,6 +8,22 @@
   margin: 0 10px 10px 0;
   margin-left: 8%;
   background: white;
+  &:hover {
+    background: white;
+  }
+}
+
+@media (max-width: 991px) {
+  .profile {
+    width: 550px;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 580px) {
+  .profile {
+    width: 100%;
+  }
 }
 
 .colored-block {
@@ -62,77 +78,94 @@
   }
 }
 
-.prof-tweets-block {
-  float: left;
-  margin-left: 5px;
-  padding: 0 0px 10px 10px;
-  .prof-tweets-link {
-    height: 40px;
-    margin-right: 10px;
-    text-decoration: none;
-    .prof-user-tweets {
-      display: block;
-      font-size: .65em;
-      color: $secondary-text;
-      transition: all .4s;
-      &:hover {
-        text-decoration: none;
-        color: $main-color;
-        transition: all .1s;
-      }
+.prof-info-block {
+  background: white;
+  &:hover {
+    background: white;
+  }
+  .prof-tweets-block {
+    float: left;
+    margin-left: 5px;
+    padding: 0 0px 10px 10px;
+    background: white;
+    &:hover {
+      background: white;
     }
-    .prof-following-num {
-      color: $main-color;
+    .prof-tweets-link {
+      height: 40px;
+      margin-right: 10px;
+      text-decoration: none;
+      .prof-user-tweets {
+        display: block;
+        font-size: .65em;
+        color: $secondary-text;
+        transition: all .4s;
+        &:hover {
+          text-decoration: none;
+          color: $main-color;
+          transition: all .1s;
+        }
+      }
+      .prof-following-num {
+        color: $main-color;
+      }
     }
   }
-}
-
-.prof-following-block {
-  float: left;
-  margin-left: 55px;
-  padding-bottom: 10px;
-  .prof-following-link {
-    height: 40px;
-    margin-right: 10px;
-    text-decoration: none;
-    .prof-user-following {
-      display: block;
-      font-size: .65em;
-      color: $secondary-text;
-      transition: all .4s;
-      &:hover {
-        text-decoration: none;
-        color: $main-color;
-        transition: all .1s;
-      }
+  .prof-following-block {
+    float: left;
+    margin-left: 55px;
+    padding-bottom: 10px;
+    background: white;
+    &:hover {
+      background: white;
     }
-    .prof-following-num {
-      color: $main-color;
+    .prof-following-link {
+      height: 40px;
+      margin-right: 10px;
+      text-decoration: none;
+      .prof-user-following {
+        display: block;
+        font-size: .65em;
+        color: $secondary-text;
+        transition: all .4s;
+        &:hover {
+          text-decoration: none;
+          color: $main-color;
+          transition: all .1s;
+        }
+      }
+      .prof-following-num {
+        color: $main-color;
+      }
     }
   }
-}
 
-.prof-followers-block {
-  float: left;
-  margin-left: 55px;
-  padding: 0 10px 10px;
-  .prof-followers-link {
-    height: 40px;
-    margin-right: 10px;
-    text-decoration: none;
-    .prof-user-followers {
-      display: block;
-      font-size: .65em;
-      color: $secondary-text;
-      transition: all .4s;
-      &:hover {
-        text-decoration: none;
-        color: $main-color;
-        transition: all .1s;
-      }
+  .prof-followers-block {
+    float: left;
+    margin-left: 55px;
+    padding: 0 10px 10px;
+    background: white;
+    &:hover {
+      background: white;
     }
-    .prof-followers-num {
-      color: $main-color;
+    .prof-followers-link {
+      height: 40px;
+      margin-right: 10px;
+      text-decoration: none;
+      .prof-user-followers {
+        display: block;
+        font-size: .65em;
+        color: $secondary-text;
+        transition: all .4s;
+        &:hover {
+          text-decoration: none;
+          color: $main-color;
+          transition: all .1s;
+        }
+      }
+      .prof-followers-num {
+        color: $main-color;
+      }
     }
   }
 }
