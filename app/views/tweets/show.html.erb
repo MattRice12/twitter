@@ -3,5 +3,6 @@
     <h5><%=link_to("#{tweet.user.name}", "/users/#{tweet.user.id}") %></h5>
     <h5><%=link_to("#{tweet.user.handle}", "/users/#{tweet.user.id}") %></h5>
     <h5><%= tweet.body %></h5>
+    <button type="delete" class="tweet-delete-button"><%= link_to "Delete", tweet_path(tweet), method: :delete, data: {confirm: "Are you sure?"} %>        </button>
   </p>
 </div>

@@ -61,7 +61,6 @@ class TweetsController < ApplicationController
   def destroy
     tweet = Tweet.find(params[:id])
     tweet.destroy
-    tweet.save
-    redirect_to tweet_path(tweet)
+    redirect_to "/", :notice => "Your tweet has been deleted"
   end
 end

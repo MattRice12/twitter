@@ -67,10 +67,8 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    if User.exists?(params[:id])
-      User.destroy(params[:id])
-      user.save
-      redirect_to user_path
-    end
+    user = User.find(params[:id])
+    user.destroy
+    redirect_to "/users/", :notice => "Your user has been deleted"
   end
 end
