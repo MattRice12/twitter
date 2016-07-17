@@ -44,12 +44,29 @@
 
   <div><%= form_for(tweet) do |f| %>
     <div class="container">
-      <div class="user-tweet"><%= f.select :user_id, options_from_collection_for_select(User.all, :id, :handle) %></div>
-      <p class="new-tweet-body"><%= f.text_area :body, placeholder: "What's on your mind?"%></p>
-      <div class="submit-tweet"><%= f.submit %></div>
-    </div>
+        <div class="row">
+          <div class="col-md-5">
+            <div class="input-group">
+              <div><label for="body">Tweeter: </label></div>
+              <div><%= f.select :user_id, options_from_collection_for_select(User.all, :id, :handle) %></div>
+            </div>
+          </div>
+          <div class="col-md-5 col-md-offset-2">
+            <div class="input-group">
+              <div><label for="body">Body: </label></div>
+              <div><%= f.text_area :body, placeholder: "What's on your mind?"%></div>
+            </div>
+          </div>
+          <div class="col-md-12 submit">
+            <div class="actions">
+              <%= f.submit %>
+            </div>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </div>
+    </div>
+
 
   <% tweets.each do |tweet| %>
 
@@ -73,17 +90,26 @@
         <%= link_to "tweets/#{tweet.id}", class: 'tweet-link' do %>
         <h5 class="tweets-body"><%= tweet.body %></h5>
         <% end %>
+        <button type="submit" class="tweet-edit-button"><%= link_to "Edit", edit_tweet_path(tweet) %></button>
+
     </div>
+
+
 
   </div>
 
   <% end %>
 </div>
 
+
+
 <div class="other-users">
-  <h3>
-    <% users.each do |user| %>
-      <h5><%= link_to user.handle, "/users/#{user.id}" %></h5>
-    <% end %>
-  </h3>
+  <% User.all.each do |user| %>
+    <div class="row">
+      <h5 class="user-handle"><%= link_to user.handle, "/users/#{user.id}" %></h5>
+      <div class"col-md-6">
+        <h6 class="user-edit-button"><%= link_to "Edit", edit_user_path(user) %></h6>
+      </div>
+    </div>
+  <% end %>
 </div>

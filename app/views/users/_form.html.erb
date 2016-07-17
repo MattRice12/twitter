@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="col-md-12">
-    <h4><%= form_title %></h4>
+  <div class="col-md-6 col-md-offset-5">
+    <h4><%= form_title + " Today!" %></h4>
   </div>
 </div>
 
@@ -27,7 +27,7 @@
       <div class="col-md-6 col-md-offset-5">
         <div class="input-group">
           <div><label for="handle">Handle </label></div>
-          <div><%= f.text_field :handle, placeholder: "@Johnny_Boy" %></div>
+          <div><label>@</label><%= f.text_field :handle, placeholder: "Johnny_Boy" %></div>
         </div>
       </div>
 

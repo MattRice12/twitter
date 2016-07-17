@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   def index
     render template: 'users/index.html.erb', locals: {
       users: User.all,
-      tweets: Tweet.all.order(created_at: :desc)
+      tweets: Tweet.all.order(created_at: :desc).limit(25),
+      user: User.new
     }
   end
 
@@ -31,7 +32,7 @@ class UsersController < ApplicationController
     user = User.new
     user.name = params[:user][:name]
     user.email = params[:user][:email]
-    user.handle = params[:user][:handle]
+    user.handle = "@" + params[:user][:handle]
     if user.save
       redirect_to "/"
     else
@@ -40,6 +41,27 @@ class UsersController < ApplicationController
         user: user,
         tweets: Tweet.all.order(created_at: :desc)
 
+      }
+    end
+  end
+
+  def edit
+    render locals: {
+      user: User.find(params[:id])
+    }
+  end
+
+  def update
+    user = User.find(params[:id])
+    user.name = params[:user][:name] if params[:user][:name].present?
+    user.email = params[:user][:email] if params[:user][:email].present?
+    user.handle = params[:user][:handle] if params[:user][:handle].present?
+    if user.save
+      redirect_to "/"
+    else
+      flash[:alert] = "Could not be edited due to errors."
+      render template: 'user/edit.html.erb', locals: {
+        user: user,
       }
     end
   end

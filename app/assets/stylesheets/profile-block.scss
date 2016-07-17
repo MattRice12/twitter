@@ -19,15 +19,24 @@
   margin-left: -1px;
   margin-top: -1px;
   background: $main-color;
+  &:hover {
+    background: $main-color;;
+  }
 }
 
 .prof-name-handle-block{
   position: relative;
   top: -35px;
   left: 9px;
+  &:hover {
+    background: none;
+  }
   .prof-pic {
     display: inline-block;
     float: left;
+    &:hover {
+      background: none;
+    }
   }
   .prof-pic img {
     height: 75px;
@@ -47,6 +56,9 @@
   }
   .prof-name-block {
     float: left;
+    &:hover {
+      background: none;
+    }
   }
 }
 

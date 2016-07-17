@@ -1,8 +1,6 @@
 @import 'variables';
 
 
-
-
 .main-tweet-block {
   float: left;
   width: 40%;
@@ -16,11 +14,18 @@
   .new-tweet-body {
     width: 100%;
   }
+  .actions {
+    float: right;
+    padding-right: 21px;
+  }
+
 
   .tweet-name-body-block {
     border-top: 1px solid $border-color;
     border-bottom: 1px solid $border-color;
     .individual-tweet-block {
+      margin: 10px;
+      margin-right: 0px;
       &:hover {
         color: $main-color;
       }
@@ -63,15 +68,16 @@
           }
         }
       }
-
       .tweet-link {
         &:hover {
           text-decoration: none;
         }
       }
       .tweets-body  {
+        float: left;
         color: black;
         text-align: left;
+        padding-right: 30px;
         &:hover {
           color: $main-color;
         }
@@ -80,6 +86,21 @@
         background: $box-color;
 
       }
+    }
+  }
+  .tweet-edit-button {
+    float: right;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    background: $main-color;
+    color: white;
+    font-size: 90%;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    &:hover {
+      background: $main-color-dark;
+      text-decoration: none;
     }
   }
 }

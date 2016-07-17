@@ -2,8 +2,8 @@ class TweetsController < ApplicationController
   def index
     render template: 'tweets/index.html.erb', locals: {
       users: User.all,
-      tweets: Tweet.all.order(created_at: :desc).limit(30),
-      tweet: Tweet.new
+      tweets: Tweet.all.order(created_at: :desc).limit(25),
+      tweet: Tweet.new,
     }
   end
 
@@ -39,9 +39,29 @@ class TweetsController < ApplicationController
     end
   end
 
+  def edit
+    render locals: {
+      tweet: Tweet.find(params[:id])
+    }
+  end
+
+  def update
+    tweet = Tweet.find(params[:id])
+    tweet.user_id = params[:tweet][:user_id]
+    tweet.body = params[:tweet][:body]
+    if tweet.save
+      redirect_to "/"
+    else
+      render template: '/tweet/edit.html.erb', locals: {
+        tweet: tweet,
+      }
+    end
+  end
+
   def destroy
     Tweet.destroy(params[:id])
-    user.save
-    redirect_to user_path
+    if tweet.save
+      redirect_to tweet_path(tweet)
+    end
   end
 end
