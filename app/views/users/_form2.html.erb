@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-5">
+    <h4><%= form_title + " Today!" %></h4>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <% if user.errors.any? %>
+      <% user.errors.full_messages.each do |msg| %>
+        <p> <%= msg %> </p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <%= form_for(user) do |f| %>
+    <div class="row">
+
+      <div class="col-md-6 col-md-offset-5">
+        <div class="input-group">
+          <div><label for="body">Name </label></div>
+          <div><%= f.text_field :name, placeholder: "John Smith" %></div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-md-offset-5">
+        <div class="input-group">
+          <div><label for="handle">Handle </label></div>
+          <div><%= f.text_field :handle, placeholder: "Johnny_Boy" %></div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-md-offset-5">
+        <div class="input-group">
+          <div><label for="email">Email </label></div>
+          <div><%= f.text_field :email, placeholder: "john_smith@lame.com" %></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 col-md-offset-5">
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+</div>
