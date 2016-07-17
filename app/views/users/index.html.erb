@@ -1,9 +1,10 @@
-<div>
+<div class="user-index-block">
+  <h2 class="user-list"><%= "User List" %></h2>
   <% users.each do |users| %>
 
-    <div>
+    <div class="user-index">
       <h3>
-          <%= link_to users.handle, "/users/#{users.id}" %>
+        <%= link_to users.handle, "/users/#{users.id}" %>
       </h3>
     </div>
 

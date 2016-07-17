@@ -1,0 +1,27 @@
+@import 'variables';
+
+.user-index-block {
+  border: 1px solid $border-color;
+  background: white;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0 30% 0 30%;
+  &:hover {
+    background: white;
+  }
+  .user-list {
+    text-decoration: underline;
+  }
+  .user-index {
+    background: 1px solid white;
+    margin: 0;
+    &:hover {
+      background: box-color;
+
+    }
+    a:hover {
+      color: $main-color;
+      text-decoration: none;
+    }
+  }
+}
