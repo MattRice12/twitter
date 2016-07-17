@@ -91,6 +91,8 @@
         <h5 class="tweets-body"><%= tweet.body %></h5>
         <% end %>
         <button type="submit" class="tweet-edit-button"><%= link_to "Edit", edit_tweet_path(tweet) %></button>
+        <button type="delete" class="tweet-delete-button"><%= link_to "Delete", tweet_path(tweet), method: delete %></button>
+
 
     </div>
 
