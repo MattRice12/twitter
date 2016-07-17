@@ -8,38 +8,39 @@
   padding-left: 10px;
   padding-right: 10px;
   background: white;
-}
-
-.user-handle {
-  margin: 10px;
-  float: left;
-  a {
-    &:hover {
-      text-decoration: none;
-      color: $main-color;
+  &:hover {
+    background: white;
+  }
+  .user-handle {
+    margin: 10px;
+    float: left;
+    a {
+      &:hover {
+        text-decoration: none;
+        color: $main-color;
+      }
     }
   }
-}
-
-.user-edit-button {
-  float: right;
-  border: 1px solid $border-color;
-  border-radius: 5px;
-  background: $main-color;
-  padding-top: 6px;
-  margin: 10px 10px 0 5px;
-  font-size: 90%;
-  width: 50px;
-  height: 30px;
-  text-align: center;
-  &:hover {
-    background: $main-color-dark;
-    text-decoration: none;
-  }
-  a {
-    color: white;
+  .user-edit-button {
+    float: right;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    background: $main-color;
+    padding-top: 6px;
+    margin: 5px 10px 0 5px;
+    font-size: 90%;
+    width: 50px;
+    height: 30px;
+    text-align: center;
     &:hover {
+      background: $main-color-dark;
       text-decoration: none;
+    }
+    a {
+      color: white;
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 }
