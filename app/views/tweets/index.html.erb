@@ -73,23 +73,16 @@
   <div class="tweet-name-body-block">
     <div class="individual-tweet-block">
       <span class="name-handle">
-
         <%= link_to "users/#{tweet.user_id}", class: "name-link" do %>
-
           <span class="tweets-name"><%= tweet.user.name %></span>
-
           <span class="tweets-handle"><%= "@#{tweet.user.name}" %></span>
-
           <span class="tweets-time"> <%= "#{distance_of_time_in_words(Time.now, tweet.created_at)}" %></span>
-
         <% end %>
       </span>
     </div>
-
     <div class="individual-tweet-block">
       <div>
         <row>
-
           <div class="tweets-body">
             <%= link_to "tweets/#{tweet.id}", class: 'tweet-link' do %>
             <%= tweet.body %>
